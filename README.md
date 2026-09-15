@@ -1,544 +1,558 @@
-# webparkirzoo# 🦁 Zoo Parking — Sistem Informasi Parkir Kebun Binatang
 
-**Zoo Parking** adalah aplikasi web untuk mengelola sistem parkir kendaraan di area kebun binatang. Aplikasi ini dibuat untuk membantu petugas dan admin dalam mengelola kendaraan masuk dan keluar, area parkir, reservasi online, pembayaran, serta riwayat transaksi parkir. wireframe/mockup ui,ux design(user experience),flowchart/user flow,erd (entity relationsip diagram),basis data(struktur tabel):[🔗 Lihat Wireframe / Mockup UI](https://agriliasholikah.github.io/mockupui/)
-🔗 [Lihat Website Zoo Parking](https://zooparkir.infinityfree.me/)
+🦁 Zoo Parking --- Sistem Informasi Parkir Kebun Binatang
+Zoo Parking adalah aplikasi web untuk mengelola sistem parkir
+kendaraan di area kebun binatang. Sistem ini membantu
+pelanggan/pengunjung, petugas, admin, dan owner dalam proses
+reservasi, pengelolaan kendaraan, area parkir, pembayaran, monitoring,
+dan laporan transaksi.
 
+🔗 Link Project
+🌐 Website Zoo Parking: https://zooparkir.infinityfree.me/
 
-## 📌 Tentang Project
+🎨 Wireframe / Mockup UI, UX Design, Flowchart/User Flow, ERD &
+Basis Data: https://agriliasholikah.github.io/mockupui/
 
-Sistem ini menyediakan pengelolaan parkir secara terkomputerisasi sehingga proses pencatatan kendaraan dan transaksi parkir menjadi lebih mudah, cepat, dan terorganisir.
+💻 Repository GitHub:
+https://github.com/agriliasholikah/webparkirzoo
 
-Aplikasi memiliki dua jenis pengguna utama:
+📌 Tentang Project
+Zoo Parking merupakan sistem informasi manajemen parkir berbasis web
+yang digunakan untuk membuat proses parkir lebih mudah, cepat, dan
+terorganisir.
 
-* 👨‍💼 **Admin** — mengelola data sistem dan area parkir.
-* 👮 **Petugas** — mengelola kendaraan masuk, kendaraan keluar, reservasi, dan pembayaran.
+Sistem memiliki beberapa peran pengguna:
 
----
+Role Fungsi
 
-## ✨ Fitur Utama
+👨‍💼 Admin Mengelola user, tarif, area parkir,
+dan melihat log aktivitas.
 
-### 👨‍💼 Admin
+👮 Petugas Mengelola kendaraan masuk/keluar,
+parkir umum, reservasi, pembayaran,
+karcis, dan struk.
 
-* Dashboard admin
-* Melihat jumlah kendaraan yang sedang parkir
-* Melihat kapasitas area parkir
-* Mengelola area parkir
-* Menambah area parkir
-* Mengubah data area parkir
-* Mengatur kapasitas area parkir
-* Melihat informasi parkir
+📊 Owner Melihat rekap dan laporan transaksi
+parkir serta reservasi.
 
-### 👮 Petugas
+✨ Fitur Utama
+👨‍💼 Admin
+Dashboard admin
 
-* Dashboard petugas
-* Parkir umum
-* Pencatatan kendaraan masuk
-* Pencatatan kendaraan keluar
-* Pencarian kendaraan berdasarkan nomor plat
-* Pengelolaan parkir berdasarkan area
-* Pengelolaan reservasi online
-* Konfirmasi reservasi
-* Pencatatan kendaraan reservasi
-* Pembayaran parkir
-* Pilihan metode pembayaran:
+Melihat jumlah kendaraan parkir
 
-  * Tunai
-  * Non Tunai
-  * QRIS
-* Cetak karcis parkir
-* Cetak karcis khusus reservasi
-* Cetak struk pembayaran
-* Riwayat transaksi parkir
+Melihat kapasitas dan slot area parkir
 
-### 🎫 Reservasi Online
+Mengelola area parkir
 
-Sistem mendukung reservasi parkir secara online.
+Menambah dan mengubah area parkir
 
-Alur reservasi:
+Mengatur kapasitas area parkir
 
-```text
-Pelanggan melakukan reservasi
-          ↓
-   Mendapat kode booking
-          ↓
-   Petugas menerima kendaraan
-          ↓
-Petugas memasukkan kode booking
-          ↓
-   Reservasi dikonfirmasi
-          ↓
-     Cetak karcis
-          ↓
-      Kendaraan parkir
-          ↓
-   Kendaraan keluar
-          ↓
-      Pembayaran
-          ↓
-    Cetak struk
-```
+Mengatur tarif kendaraan
 
----
+Mengelola user
 
-## 💰 Sistem Tarif Parkir
+Mengatur role user: Admin, Owner, Petugas, dan Pelanggan
 
-Tarif parkir dapat dibedakan berdasarkan jenis kendaraan.
+Melihat log aktivitas sistem
 
-Contoh:
+👮 Petugas
+Dashboard petugas
 
-| Jenis Kendaraan |                        Tarif |
-| --------------- | ---------------------------: |
-| Motor           |                      Rp5.000 |
-| Mobil           |                     Rp10.000 |
-| Lainnya         | Mengikuti konfigurasi sistem |
+Parkir umum
 
-Sistem juga dapat menggunakan tarif maksimal sehingga biaya parkir tidak melebihi batas yang telah ditentukan.
+Input kendaraan masuk
 
----
+Input nomor plat, jenis kendaraan, warna, dan pemilik
 
-## 🅿️ Manajemen Area Parkir
+Memilih area parkir
 
-Setiap area parkir memiliki:
+Mengecek kapasitas area
 
-* Nama area
-* Kapasitas
-* Jumlah kendaraan yang sedang menggunakan area
+Mencegah kendaraan masuk jika area penuh
 
-Sistem akan memperbarui jumlah kendaraan ketika:
+Kendaraan keluar
 
-**Kendaraan masuk:**
+Menghitung biaya parkir
 
-```text
-Terisi + 1
-```
+Pembayaran Tunai, Non Tunai, dan QRIS
 
-**Kendaraan keluar:**
+Cetak karcis parkir umum
 
-```text
-Terisi - 1
-```
+Konfirmasi reservasi online
 
-Sistem juga mencegah kendaraan masuk apabila kapasitas area sudah penuh.
+Cetak karcis khusus reservasi
 
----
+Pembayaran kendaraan reservasi
 
-## 🗄️ Database
+Cetak struk pembayaran
 
-Project ini menggunakan **MySQL**.
+Melihat riwayat transaksi
 
-Beberapa tabel utama yang digunakan:
+👤 Pelanggan / Pengunjung
+Registrasi akun
 
-```text
-tb_user
-tb_kendaraan
-tb_parkir
-tb_area_parkir
-tb_reservasi
-tb_tarif
-```
-
-### `tb_parkir`
-
-Digunakan untuk menyimpan transaksi kendaraan yang masuk dan keluar.
-
-Contoh data yang disimpan:
-
-* ID parkir
-* Kendaraan
-* Area parkir
-* Reservasi
-* Petugas
-* Waktu masuk
-* Waktu keluar
-* Status parkir
-* Total biaya
-* Metode pembayaran
-* Denda
-
-### `tb_kendaraan`
-
-Menyimpan informasi kendaraan:
-
-* Nomor plat
-* Jenis kendaraan
-* Warna
-* Pemilik
-
-### `tb_area_parkir`
-
-Menyimpan informasi area parkir:
-
-* Nama area
-* Kapasitas
-* Jumlah kendaraan yang sedang parkir
-
-### `tb_reservasi`
-
-Menyimpan data reservasi:
-
-* Kode booking
-* Nama pemesan
-* Nomor plat
-* Jenis kendaraan
-* Area parkir
-* Tanggal reservasi
-* Status reservasi
-
-### `tb_tarif`
-
-Menyimpan tarif berdasarkan jenis kendaraan.
-
----
-
-## 🛠️ Teknologi yang Digunakan
-
-Project ini dibuat menggunakan:
-
-* **PHP**
-* **MySQL**
-* **HTML5**
-* **CSS3**
-* **JavaScript**
-* **Bootstrap** *(jika digunakan pada project)*
-* **XAMPP / Laragon** untuk local development
-* **InfinityFree** untuk hosting
-
----
-
-## 📂 Struktur Project
-
-Struktur file utama project:
-
-```text
-Zoo-Parking/
-│
-├── koneksi.php
-├── login.php
-│
-├── dashboard_admin.php
-├── dashboard_petugas.php
-│
-├── cetak_karcis.php
-├── cetak_karcis_reservasi.php
-├── cetak_struk.php
-│
-├── admin/
-│   └── ...
-│
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-└── database/
-    └── zoo_parking.sql
-```
-
-> Struktur folder dapat berbeda tergantung versi project yang digunakan.
-
----
-
-## 🔐 Sistem Login & Hak Akses
-
-Sistem menggunakan autentikasi berbasis session.
-
-### Admin
-
-Admin memiliki akses untuk mengelola data dan area parkir.
-
-```text
 Login
-  ↓
-Dashboard Admin
-  ↓
-Manajemen Area Parkir
-  ↓
-Pengelolaan Sistem
-```
 
-### Petugas
+Melihat ketersediaan area parkir
 
-Petugas memiliki akses untuk mengelola operasional parkir.
+Melakukan reservasi parkir online
 
-```text
-Login
-  ↓
-Dashboard Petugas
-  ↓
-Parkir Umum / Reservasi
-  ↓
-Kendaraan Masuk
-  ↓
-Kendaraan Keluar
-  ↓
-Pembayaran
-  ↓
-Cetak Struk
-```
+Mengisi nama pemesan
 
----
+Mengisi nomor plat
 
-## 🔄 Alur Parkir Umum
+Memilih jenis kendaraan
 
-```text
+Memilih area parkir
+
+Mendapatkan kode booking
+
+Melihat status reservasi
+
+Melihat riwayat reservasi sendiri
+
+📊 Owner
+Dashboard owner
+
+Melihat rincian transaksi parkir
+
+Melihat riwayat parkir harian
+
+Melihat riwayat reservasi
+
+Rekap laporan
+
+Filter laporan berdasarkan periode
+
+Pilihan periode: bulan ini, bulan lalu, atau semua data
+
+Cetak / PDF laporan
+
+🏠 Halaman Utama
+Informasi Zoo Parking
+
+Status ketersediaan parkir
+
+Statistik ketersediaan area
+
+Informasi tarif
+
+Panduan parkir
+
+FAQ
+
+Ulasan dan rating pengunjung
+
+Akses login petugas/admin
+
+🔄 Alur Sistem
+Parkir Umum
 Kendaraan Datang
        ↓
-Input Nomor Plat
-       ↓
-Pilih Jenis Kendaraan
+Input Data Kendaraan
        ↓
 Pilih Area Parkir
        ↓
 Cek Kapasitas
        ↓
-Kendaraan Masuk
-       ↓
+Kapasitas Tersedia?
+   ↓             ↓
+  Ya           Tidak
+   ↓             ↓
+Kendaraan      Pesan Error
+Masuk
+   ↓
 Cetak Karcis
-       ↓
+   ↓
 Kendaraan Parkir
-       ↓
+   ↓
 Kendaraan Keluar
-       ↓
+   ↓
 Hitung Biaya
-       ↓
+   ↓
+Pilih Metode Pembayaran
+   ↓
 Pembayaran
-       ↓
+   ↓
 Cetak Struk
-       ↓
+   ↓
 Transaksi Selesai
-```
-
----
-
-## 🔄 Alur Parkir Reservasi
-
-```text
 Reservasi Online
-       ↓
+Pelanggan
+   ↓
+Login / Registrasi
+   ↓
+Reservasi Online
+   ↓
+Pilih Kendaraan & Area
+   ↓
 Kode Booking
-       ↓
+   ↓
 Kendaraan Datang
-       ↓
-Petugas Memasukkan Kode Booking
-       ↓
-Validasi Reservasi
-       ↓
+   ↓
+Petugas Validasi Kode Booking
+   ↓
 Konfirmasi Reservasi
-       ↓
+   ↓
 Cetak Karcis Reservasi
-       ↓
+   ↓
 Kendaraan Parkir
-       ↓
+   ↓
 Kendaraan Keluar
-       ↓
+   ↓
 Pembayaran
-       ↓
+   ↓
 Cetak Struk
-       ↓
+   ↓
 Reservasi Selesai
-```
+💰 Sistem Tarif Parkir
+Tarif disimpan pada tabel tb_tarif berdasarkan jenis kendaraan.
 
----
+Contoh:
 
-## 📊 Status Data
+Jenis Kendaraan Tarif per Jam
 
-### Status Parkir
+Motor Rp5.000
+Mobil Rp10.000
+Lainnya Mengikuti konfigurasi sistem
 
-```text
+Sistem juga menyediakan tarif maksimal sehingga biaya parkir dapat
+dibatasi sesuai konfigurasi.
+
+🅿️ Manajemen Area Parkir
+Setiap area memiliki:
+
+Nama area
+
+Kapasitas
+
+Jumlah kendaraan yang sedang terisi
+
+Ketika kendaraan masuk:
+
+Terisi + 1
+Ketika kendaraan keluar:
+
+Terisi - 1
+Sistem melakukan pengecekan kapasitas agar kendaraan tidak masuk ketika
+area sudah penuh.
+
+🗄️ Basis Data
+Project menggunakan MySQL.
+
+Tabel yang terdeteksi digunakan oleh sistem:
+
+tb_user
+tb_kendaraan
+tb_area_parkir
+tb_parkir
+tb_reservasi
+tb_tarif
+tb_log_aktivitas
+tb_ulasan
+tb_faq
+tb_user
+Menyimpan data akun pengguna dan role.
+
+Field utama yang digunakan antara lain:
+
+id_user
+
+nama_lengkap
+
+username
+
+email
+
+password
+
+role
+
+Role yang digunakan sistem mencakup:
+
+admin
+petugas
+owner
+pelanggan
+pengunjung
+user
+tb_kendaraan
+Menyimpan data kendaraan:
+
+id_kendaraan
+
+plat_nomor
+
+jenis_kendaraan
+
+warna
+
+pemilik
+
+id_user
+
+tb_area_parkir
+Menyimpan data area parkir:
+
+id_area
+
+nama_area
+
+kapasitas
+
+terisi
+
+tb_parkir
+Menyimpan transaksi kendaraan:
+
+id_parkir
+
+id_kendaraan
+
+id_area
+
+id_reservasi
+
+id_user
+
+waktu_masuk
+
+waktu_keluar
+
+status
+
+biaya_total
+
+metode_pembayaran
+
+denda
+
+Status parkir:
+
 parkir
 selesai
-```
+tb_reservasi
+Menyimpan reservasi pelanggan:
 
-### Status Reservasi
+id_reservasi
 
-```text
+kode_booking
+
+nama_pemesan
+
+plat_nomor
+
+id_area
+
+jenis_kendaraan
+
+status
+
+tgl_reservasi
+
+warna_kendaraan
+
+Status reservasi:
+
 booked
 digunakan
 selesai
 batal
-```
+tb_tarif
+Menyimpan konfigurasi tarif:
 
----
+jenis_kendaraan
 
-## 🚀 Cara Menjalankan Project
+tarif_per_jam
 
-### 1. Clone Repository
+tarif_maksimal
 
-```bash
-git clone https://github.com/USERNAME/NAMA-REPOSITORY.git
-```
+tb_log_aktivitas
+Mencatat aktivitas pengguna dalam sistem, termasuk user yang melakukan
+aktivitas, jenis aktivitas, dan waktu aktivitas.
 
-Masuk ke folder project:
+tb_ulasan
+Digunakan untuk menyimpan ulasan/rating pengunjung pada halaman utama.
 
-```bash
-cd NAMA-REPOSITORY
-```
+tb_faq
+Menyimpan pertanyaan dan jawaban FAQ yang ditampilkan pada halaman
+utama.
 
-### 2. Jalankan Web Server
+📂 Struktur Project
+Berdasarkan file project yang diberikan, struktur sebenarnya adalah:
 
-Jika menggunakan XAMPP:
+sistem_parkir/
+│
+├── admin_log.php
+├── admin_tarif.php
+├── admin_user.php
+│
+├── cetak_karcis.php
+├── cetak_karcis_reservasi.php
+├── cetak_struk.php
+│
+├── dashboard_admin.php
+├── dashboard_owner.php
+├── dashboard_petugas.php
+├── dashboard_user.php
+│
+├── get_stats_parkir.php
+├── index.php
+├── koneksi.php
+├── login.php
+├── logout.php
+├── pembayaran_berhasil.php
+├── qr.jpeg
+└── register.php
+Struktur di atas disesuaikan dengan file project yang digunakan, bukan
+struktur folder contoh.
 
-```text
-htdocs/
-└── Zoo-Parking/
-```
+🛠️ Teknologi
+PHP
 
-Kemudian aktifkan:
+MySQL
 
-* Apache
-* MySQL
+HTML5
 
-### 3. Buat Database
+CSS3
 
+JavaScript
+
+Bootstrap 5
+
+Font Awesome
+
+Chart.js
+
+SweetAlert2
+
+XAMPP untuk local development
+
+InfinityFree untuk hosting
+
+🎨 Dokumentasi UI/UX
+Dokumentasi perancangan sistem tersedia pada:
+
+👉 https://agriliasholikah.github.io/mockupui/
+
+Dokumentasi meliputi:
+
+Wireframe / Mockup UI
+
+UX Design (User Experience)
+
+Flowchart / User Flow
+
+ERD (Entity Relationship Diagram)
+
+Basis Data / Struktur Tabel
+
+🚀 Cara Menjalankan Secara Lokal
+1. Siapkan XAMPP
+Aktifkan:
+
+Apache
+MySQL
+2. Letakkan Project
+Masukkan folder project ke:
+
+xampp/htdocs/sistem_parkir/
+3. Buat Database
 Buka:
 
-```text
 http://localhost/phpmyadmin
-```
+Buat database sesuai konfigurasi pada koneksi.php.
 
-Buat database baru, misalnya:
+4. Konfigurasi Database
+Sesuaikan:
 
-```text
-zoo_parking
-```
+$host
+$user
+$password
+$database
+pada:
 
-Kemudian import file:
-
-```text
-database/zoo_parking.sql
-```
-
-### 4. Konfigurasi Database
-
-Sesuaikan file:
-
-```text
 koneksi.php
-```
+5. Jalankan
+Buka:
 
-Contoh konfigurasi:
+http://localhost/sistem_parkir/
+🌐 Hosting
+Project dapat digunakan pada hosting yang mendukung PHP dan MySQL.
 
-```php
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "zoo_parking";
-```
+Website yang digunakan:
 
-Sesuaikan username, password, dan nama database dengan konfigurasi komputer/server.
+https://zooparkir.infinityfree.me/
 
-### 5. Jalankan Project
+Untuk deployment, konfigurasi koneksi database harus disesuaikan dengan
+database hosting.
 
-Buka browser:
+Jangan menyimpan password database asli pada repository GitHub publik.
 
-```text
-http://localhost/Zoo-Parking/
-```
+🔐 Keamanan
+Beberapa hal yang perlu diperhatikan:
 
----
+Gunakan password database yang aman.
 
-## 🌐 Hosting
+Jangan menyimpan credential database asli di repository publik.
 
-Project dapat di-host menggunakan hosting yang mendukung:
+Validasi input pengguna.
 
-* PHP
-* MySQL
-* phpMyAdmin
-* File Manager
+Gunakan autentikasi session.
 
-Contoh hosting yang dapat digunakan:
+Batasi akses berdasarkan role.
 
-**InfinityFree**
+Gunakan prepared statement untuk query database.
 
-Setelah upload file project, sesuaikan konfigurasi `koneksi.php` dengan database hosting.
+Jangan menampilkan informasi error database secara langsung kepada
+pengguna.
 
-> Jangan upload password database asli ke repository GitHub publik.
+🎯 Tujuan Project
+Zoo Parking dibuat untuk:
 
----
+Mempermudah pengelolaan parkir.
 
-## 🔒 Keamanan
+Mengurangi pencatatan manual.
 
-Beberapa hal yang perlu diperhatikan sebelum project digunakan pada production:
+Mempermudah petugas mengelola kendaraan.
 
-* Gunakan password database yang aman.
-* Jangan menyimpan credential database di repository publik.
-* Gunakan prepared statement untuk query database.
-* Validasi input pengguna.
-* Gunakan session authentication untuk halaman yang membutuhkan login.
-* Batasi hak akses berdasarkan role.
-* Jangan menampilkan informasi error database kepada pengguna secara langsung.
+Mengetahui kapasitas area parkir.
 
----
+Mempermudah reservasi parkir online.
 
-## 📸 Tampilan Aplikasi
+Mempermudah proses pembayaran.
 
-Tambahkan screenshot aplikasi pada folder:
+Menyediakan informasi dan laporan transaksi.
 
-```text
-screenshots/
-├── login.png
-├── dashboard-admin.png
-├── dashboard-petugas.png
-├── parkir-umum.png
-├── reservasi.png
-├── pembayaran.png
-└── cetak-struk.png
-```
+Menyimpan data parkir secara terstruktur.
 
-Kemudian tampilkan di README:
+🔮 Pengembangan Selanjutnya
+Beberapa pengembangan yang dapat dilakukan:
 
-```markdown
-![Login](screenshots/login.png)
+📱 Tampilan lebih responsif untuk smartphone
 
-![Dashboard Petugas](screenshots/dashboard-petugas.png)
+🔔 Notifikasi reservasi
 
-![Pembayaran](screenshots/pembayaran.png)
-```
+🎫 QR Code pada tiket
 
----
+📷 Pengenalan plat nomor kendaraan
 
-## 🎯 Tujuan Project
+💳 Payment gateway
 
-Project **Zoo Parking** dibuat untuk:
+📧 Notifikasi email
 
-* Mempermudah pengelolaan parkir.
-* Mengurangi pencatatan manual.
-* Mempermudah petugas dalam mengelola kendaraan.
-* Mengetahui kapasitas area parkir.
-* Mengelola reservasi parkir.
-* Mempermudah proses pembayaran.
-* Menyimpan riwayat transaksi secara terstruktur.
+📱 Notifikasi WhatsApp
 
----
+📈 Laporan transaksi yang lebih lengkap
 
-## 🔮 Pengembangan Selanjutnya
+🖨️ Dukungan printer thermal
 
-Beberapa fitur yang dapat dikembangkan:
-
-* 📱 Tampilan responsive untuk smartphone
-* 📊 Grafik statistik parkir
-* 🔔 Notifikasi otomatis
-* 🎫 QR Code pada tiket parkir
-* 📷 Pengenalan plat nomor kendaraan
-* 💳 Integrasi payment gateway
-* 📧 Notifikasi email reservasi
-* 📱 Notifikasi WhatsApp
-* 📈 Laporan transaksi berdasarkan tanggal
-* 🖨️ Dukungan printer thermal
-* 👥 Manajemen pengguna dan role yang lebih lengkap
-
----
-
-## 👨‍💻 Developer
-
-**Zoo Parking**
+👨‍💻 Developer
+Zoo Parking
 
 Sistem Informasi Parkir Kebun Binatang berbasis web.
 
----
-
-## 📄 Lisensi
-
-Project ini dibuat untuk keperluan **pembelajaran, tugas, dan pengembangan sistem informasi parkir**.
-
-Silakan dikembangkan dan disesuaikan dengan kebutuhan.
+📄 Lisensi
+Project ini dibuat untuk keperluan pembelajaran, tugas, dan
+pengembangan sistem informasi parkir
