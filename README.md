@@ -1,6 +1,7 @@
 # webparkirzoo# 🦁 Zoo Parking — Sistem Informasi Parkir Kebun Binatang
 
-**Zoo Parking** adalah aplikasi web untuk mengelola sistem parkir kendaraan di area kebun binatang. Aplikasi ini dibuat untuk membantu petugas dan admin dalam mengelola kendaraan masuk dan keluar, area parkir, reservasi online, pembayaran, serta riwayat transaksi parkir.
+**Zoo Parking** adalah aplikasi web untuk mengelola sistem parkir kendaraan di area kebun binatang. Aplikasi ini dibuat untuk membantu petugas dan admin dalam mengelola kendaraan masuk dan keluar, area parkir, reservasi online, pembayaran, serta riwayat transaksi parkir. wireframe/mockup ui,ux design(user experience),flowchart/user flow,erd (entity relationsip diagram),basis data(struktur tabel):https://agriliasholikah.github.io/mockupui/
+
 
 ## 📌 Tentang Project
 
